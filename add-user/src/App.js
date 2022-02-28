@@ -9,13 +9,13 @@ function App() {
 
   const addUserHandler = (uName, uAge) => {
     setUsersList((prevUsersList) => {
-      return[...prevUsersList, {name: uName, age: uAge}];
+      return[...prevUsersList, {name: uName, age: uAge, id: Math.random().toString()}];
     });
   };
   return (
     <div>
       <AddUser onAddUser={addUserHandler}/>
-      <UsersList users={[]}/>
+      <UsersList users={usersList}/>
     </div>
   );
 }
